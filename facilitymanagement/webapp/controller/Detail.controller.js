@@ -21,13 +21,22 @@ sap.ui.define(
           var vCondx = oViewModel.oData.detail.Condx; // 방상태
           var vNote = oViewModel.oData.detail.Note; // 노트
           var oDataModel = this.getView().getModel();
-  
+          
+
+          if ( vCondx == "시설점검완료" ) {
+            var vNote = "";
+            oViewModel.oData.detail.Note = "";
+             
+           };
+
           var oData = {
             Plant: vPlant,
             Roomid: vRoomid,
             Condx: vCondx,
             Note: vNote,
           };
+
+       
   
           var sPath =
             "/RoomstatusSet(Plant='" + vPlant + "',Roomid='" + vRoomid + "')";

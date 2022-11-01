@@ -121,8 +121,15 @@ sap.ui.define(
         var vRoomid = oViewModel.oData.detail.Roomid;
         var vRoomno = oViewModel.oData.detail.Roomno;
         var vCondx = oViewModel.oData.detail.Condx;
+        var vNote = oViewModel.oData.detail.Note;
 
         var oDataModel = this.getView().getModel(); //??
+
+        if ( vCondx == "시설점검완료" ) {
+          var vNote = "";
+          oViewModel.oData.detail.Note = "";
+           
+         };
 
         var oData = {
           Plant: vPlant,
@@ -130,6 +137,7 @@ sap.ui.define(
           Roomid: vRoomid,
           Roomno: vRoomno,
           Condx: vCondx,
+          Note : vNote,
         };
 
         var sPath =
